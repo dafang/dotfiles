@@ -1,0 +1,55 @@
+# Set your name and email with the following:
+#   git config -f ~/.gitconfig.local user.name John Appleseed
+#   git config -f ~/.gitconfig.local user.email me@example.com
+
+[include]
+path = .gitconfig.local
+
+[color]
+ui = auto
+
+[color "diff"]
+commit = yellow reverse
+
+[core]
+excludesfile = ~/.gitignore
+
+[push]
+default = tracking
+
+[merge]
+log = true
+conflictstyle = diff3
+tool = vimdiff
+
+[difftool "vimdiff"]
+cmd = vimdiff $LOCAL $REMOTE
+
+[mergetool]
+prompt = false
+
+[rebase]
+autosquash = true
+
+[git-up "bundler"]
+check = true
+
+[git-up "rebase"]
+auto = false
+
+[rerere]
+enabled = 1
+
+[gitflow "branch"]
+master = master
+develop = develop
+
+[gitflow "prefix"]
+feature = feature/
+release = release/
+hotfix = hotfix/
+support = support/
+versiontag =
+
+[git-up "rebase"]
+arguments = --preserve-merges

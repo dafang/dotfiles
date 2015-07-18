@@ -22,7 +22,7 @@ alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 
 if type react-native >/dev/null 2>&1; then
-  alias = rn='react-native'
+  alias rn='react-native'
 fi
 
 alias c="curl -s --dump-header /dev/stderr"

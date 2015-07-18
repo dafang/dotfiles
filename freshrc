@@ -1,12 +1,9 @@
 # vim: set ft=sh:
 
 fresh freshshell/fresh bin/fresh --bin
-fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completion/_fresh
-fresh freshshell/fresh-open bin/fresh-open --bin
 
 # Shell
 
-fresh shell/exports.sh
 fresh shell/aliases/\*
 fresh shell/functions/\*
 fresh shell/config/\*
@@ -16,24 +13,19 @@ fresh-options --file
   fresh config/\*
 fresh-options
 
-# source "$HOME/.dotfiles/config/zgen"
-
 # Zsh
 fresh-options --file=~/.zshrc --marker
   fresh shell/exports.sh
-  fresh shell/zsh/completion.zsh
-  fresh shell/zsh/prompt.zsh
   fresh shell/zsh/title.zsh
-  fresh shell/zsh/aliases.zsh
-  fresh shell/zsh/zshrc
+  fresh shell/zsh/prompt.zsh
+  fresh shell/zsh/completion.zsh
   fresh shell/zsh/keybindings.zsh
   fresh shell/zsh/selecta.zsh
-
-  # this loads the shell files and needs to be at the bottom of the zshrc for
-  # compdef be availiable
-  fresh freshshell/fresh contrib/source-build.sh
-
+  fresh shell/zsh/zshrc
+  fresh shell/oh-my-zsh/zshrc #load oh-my-zsh rc file
+  fresh shell/zsh/title.zsh
   fresh rupa/z z.sh
+
   fresh robbyrussell/oh-my-zsh plugins/git-flow/git-flow.plugin.zsh
   fresh bjeanes/dot-files shells/zsh/lib/completion-waiting-dots.zsh
 
@@ -41,64 +33,13 @@ fresh-options --file=~/.zshrc --marker
   fresh akatov/dotfiles zshrc/dedup-path
 
   fresh supercrabtree/k k.sh
-  fresh shell/oh-my-zsh/zshrc #load oh-my-zsh rc file
 fresh-options
-
-fresh zsh-users/zsh-completions src/_ack --file=completion/_ack
-fresh robbyrussell/oh-my-zsh plugins/brew/_brew --file=completion/_brew
-fresh shell/zsh/completions/_gh --file=completion/_gh
-
-fresh zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.zsh --file=vendor/zsh-syntax-highlighting.zsh
-fresh zsh-users/zsh-syntax-highlighting highlighters/main/main-highlighter.zsh --file=vendor/highlighters/main/main-highlighter.zsh
-fresh zsh-users/zsh-syntax-highlighting highlighters/brackets/brackets-highlighter.zsh --file=vendor/highlighters/brackets/brackets-highlighter.zsh
-fresh shell/zsh/zsh-syntax-highlighting.zsh --file=~/.zshrc
 
 filter_vundle_lines() {
   grep -v ^Bundle
 }
 
-# Vim
-fresh-options --file=~/.vimrc --marker=\"
-  fresh twe4ked/dotfiles vim/leader.vim
-  fresh twe4ked/dotfiles vim/vundle_before.vim
-  fresh twe4ked/dotfiles vim/vundle.vim
-  fresh twe4ked/dotfiles vim/vundle_after.vim
-  fresh twe4ked/dotfiles vim/plugin_config/\*
-  fresh twe4ked/dotfiles vim/config/\*
-  fresh config/vimrc
-  fresh jasoncodes/dotfiles vim/mappings/indent.vim
-  fresh jasoncodes/dotfiles vim/mappings/pasteboard.vim
-  fresh jasoncodes/dotfiles vim/mappings/whitespace.vim --filter=filter_vundle_lines
-  fresh jasoncodes/dotfiles vim/config/undo.vim
-  fresh jasoncodes/dotfiles vim/config/tags.vim
-  fresh jasoncodes/dotfiles vim/config/auto_mkdir.vim
-  fresh jasoncodes/dotfiles vim/config/search.vim
-  fresh jasoncodes/dotfiles vim/config/cursor.vim
-  fresh jasoncodes/dotfiles vim/config/bubbling.vim
-  fresh jasoncodes/dotfiles vim/functions.vim
-  fresh jasoncodes/dotfiles vim/plugins/ctrlp.vim --filter=filter_vundle_lines
-  fresh jasoncodes/dotfiles vim/plugins/markdown.vim --filter=filter_vundle_lines
-  fresh jasoncodes/dotfiles vim/plugins/ruby.vim --filter=filter_vundle_lines
-  # Ruby autocommands
-  fresh jasoncodes/dotfiles vim/plugins/ruby.vim --filter='sed -n 11,13p' --ref=da7d4a8
-  fresh hackling/dotfiles vim/plugins/surround.vim --filter=filter_vundle_lines
-  fresh nathanaelkane/dotfiles vim/plugins/easymotion.vim
-  fresh jasoncodes/dotfiles vim/config/completion.vim
-fresh-options
-fresh twe4ked/dotfiles vim/gvimrc --file
-fresh twe4ked/dotfiles vim/colors --file=~/.vim/colors/
-
 # bin
 fresh-options --bin
   fresh bin/\*
 fresh-options
-
-init_vim() {
-  if which vim &> /dev/null && ! [ -d $HOME/.vim/bundle/vundle ]; then
-    vim || [ -d $HOME/.vim/bundle/vundle ]
-  fi
-}
-
-fresh_after_build() {
-  init_vim
-}

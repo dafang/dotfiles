@@ -19,6 +19,6 @@ elif [ -f /etc/bash_completion ]; then
 fi;
 
 # Add jenv bash autocompletion
-if which jenv > /dev/null then
+if which jenv > /dev/null; then
 	eval "$(jenv init -)"
 fi;

@@ -18,7 +18,7 @@ fresh-options --file=~/.zshrc --marker
   fresh shell/exports.sh
   fresh shell/oh-my-zsh/zshrc #load oh-my-zsh rc file
 
-  fresh supercrabtree/k k.sh
+  fresh rimraf/k k.sh
 fresh-options
 
 filter_vundle_lines() {

@@ -36,6 +36,8 @@ git clone git@github.com:dafang/dotfiles.git .dotfiles
 
 Then run `fresh install` to configure local shell environment.
 
+Each time if you have modified the dotfiles, you can run `fresh update` to update them.
+
 ## Useful tools
 
 - [zgen](https://github.com/tarjoilija/zgen)

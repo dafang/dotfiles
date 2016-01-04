@@ -48,6 +48,12 @@ vim
 
 Then, `:PlugInstall`
 
+## Install [HomeBrew](http://brew.sh/) on Mac OS
+
+`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+Then run `./brew.sh` to install brew packages.
+
 ## Useful tools
 
 - [zgen](https://github.com/tarjoilija/zgen)

@@ -14,6 +14,11 @@ This will:
 
 You will need to manually add `source ~/.fresh/build/shell.sh` to your shell config.
 
+## Install [vim-plug](https://github.com/junegunn/vim-plug)
+
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+
 ## Clone my dotfiles
 
 ```

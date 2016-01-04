@@ -27,6 +27,8 @@ Install oh-my-zsh:
 
 The [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) is leverage the [zgen](https://github.com/tarjoilija/zgen) to manage the zsh plugins. No need to install `zgen` as our dotfiles contains the zgen executor bin file.
 
+Each time if you updated the `.dotfiles/shell/oh-my-zsh/zshrc` file, you need to run `zgen reset` then `zgen save`.
+
 ## Clone my dotfiles
 
 ```

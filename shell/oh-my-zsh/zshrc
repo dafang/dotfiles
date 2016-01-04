@@ -93,7 +93,7 @@ for file in ~/.{bashrc,exports,aliases,functions,extra}; do
 done;
 
 source ~/.fresh/build/shell.sh
-source ~/.dotfiles/bin/zgen
+# source ~/.dotfiles/bin/zgen
 
 # check if there's no init script
 if ! zgen saved; then

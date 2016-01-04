@@ -19,7 +19,11 @@ You will need to manually add `source ~/.fresh/build/shell.sh` to your shell con
 `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
     
-## [zgen](https://github.com/tarjoilija/zgen)
+## Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and [zgen](https://github.com/tarjoilija/zgen)
+
+Install oh-my-zsh:
+
+`sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
 The [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) is leverage the [zgen](https://github.com/tarjoilija/zgen) to manage the zsh plugins. No need to install `zgen` as our dotfiles contains the zgen executor bin file.
 

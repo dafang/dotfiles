@@ -32,11 +32,6 @@ function path_add() {
 # Make vim the default editor.
 export EDITOR='vim';
 
-# Enable persistent REPL history for `node`.
-NODE_REPL_HISTORY_FILE=~/.node_history;
-# Allow 32³ entries; the default is 1000.
-NODE_REPL_HISTORY_SIZE='32768';
-
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';

@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export PATH="/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin"
+# "$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -81,38 +81,9 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-command -v jenv > /dev/null && eval "$(jenv init -)"
-command -v phpenv > /dev/null && export PATH="$HOME//.phpenv/bin:$PATH"
-command -v phpenv > /dev/null && eval "$(phpenv init -)"
-
 path_add "/usr/local/opt/coreutils/libexec/gnubin"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 for file in ~/.{bashrc,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
-
-source ~/.fresh/build/shell.sh
-# source ~/.dotfiles/bin/zgen
-
-# check if there's no init script
-if ! zgen saved; then
-    echo "Creating a zgen save"
-
-    zgen oh-my-zsh
-
-    # plugins
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/sudo
-    zgen oh-my-zsh plugins/command-not-found
-    zgen load zsh-users/zsh-syntax-highlighting
-
-    # completions
-    zgen load zsh-users/zsh-completions src
-
-		zgen load djui/alias-tips
-		zgen load horosgrisa/autoenv
-
-    # save all to init script
-    zgen save
-fi

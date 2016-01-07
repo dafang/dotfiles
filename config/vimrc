@@ -297,7 +297,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Vim-instant-markdown doesn't work in zsh
-set shell=bash\ -i
+" set shell=bash\ -i
 
 " Snippets author
 let g:snips_author = 'WyattF'

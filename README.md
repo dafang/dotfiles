@@ -36,6 +36,13 @@ cd $HOME
 git clone git@github.com:dafang/dotfiles.git .dotfiles
 ```
 
+Then 
+
+```
+rm -rf ~/.freshrc
+ln -s ~/.dotfiles/freshrc ~/.freshrc
+```
+
 Then run `fresh install` to configure local shell environment.
 
 Each time if you have modified the dotfiles, you can run `fresh update` to update them.
@@ -50,7 +57,7 @@ vim
 
 Then, `:PlugInstall`
 
-## Install [HomeBrew](http://brew.sh/) on Mac OS
+## Install [HomeBrew](http://brew.sh/) on Mac OS [Only required on Mac]
 
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 

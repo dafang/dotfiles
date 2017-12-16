@@ -41,6 +41,7 @@ Then
 ```
 rm -rf ~/.freshrc
 ln -s ~/.dotfiles/freshrc ~/.freshrc
+rm -rf ~/.zshrc
 ```
 
 Then run `fresh install` to configure local shell environment.
@@ -56,6 +57,14 @@ vim
 ```
 
 Then, `:PlugInstall`
+
+## Install powerline
+
+See [powerline](https://powerline.readthedocs.io/en/latest/)
+
+Then setup your iTerm fonts to one of the powwerline fonts:
+
+![powerline fonts](https://user-images.githubusercontent.com/207689/34072433-6a95aee0-e2c2-11e7-9693-a88729dbd29d.png)
 
 ## Install [HomeBrew](http://brew.sh/) on Mac OS [Only required on Mac]
 

@@ -195,10 +195,6 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinPos="left"
-" Automatically open a NERDTree if no files where specified
-autocmd vimenter * if !argc() | NERDTree endif
-" Close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Open a NERDTree
 "nnoremap <Leader>t :NERDTreeToggle<cr>
 map <Leader>t <plug>NERDTreeTabsToggle<CR>
